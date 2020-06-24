@@ -1,0 +1,558 @@
+<ion-header>
+  <ion-toolbar color='dark'>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Forms</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <mat-horizontal-stepper labelPosition="bottom" [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="detailsFormGroup">
+      <form [formGroup]="detailsFormGroup">
+        <ng-template matStepLabel>
+            <div class="template-title" color="dark">Details</div>
+        </ng-template>
+        <div class="ion-text-center">
+          <p class="forms-title" style="background-color: darkgrey;">
+            Maintenance Details
+          </p>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland;">Name</p>
+          <p>
+            <mat-form-field appearance="outline">
+              <input formControlName="name" inputmode="text" matInput>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div *ngFor="let error of errorMessages.name">
+          <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>    
+
+        <div>
+          <p style="font-family: KurriIsland;">ID No</p>
+          <p>
+            <mat-form-field appearance="outline">
+              <input formControlName="id" inputmode="text" matInput>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div *ngFor="let error of errorMessages.id">
+          <ng-container *ngIf="id.hasError(error.type) && (id.dirty || id.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <div>
+          <p style="font-family: KurriIsland;">Bus No</p>
+          <p>
+            <mat-form-field appearance="outline">
+              <input formControlName="busNo" inputmode="text" matInput>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div *ngFor="let error of errorMessages.busNo">
+          <ng-container *ngIf="busNo.hasError(error.type) && (busNo.dirty || busNo.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <div>
+          <p style="font-family: KurriIsland;">Bus Model</p>
+          <p>
+            <mat-form-field appearance="outline">
+              <input formControlName="busModel" inputmode="text" matInput>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div *ngFor="let error of errorMessages.busModel">
+          <ng-container *ngIf="busModel.hasError(error.type) && (busModel.dirty || busModel.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <div>
+          <p style="font-family: KurriIsland;">Maintenance Order</p>
+          <p>
+            <mat-form-field appearance="outline">
+              <input formControlName="order" inputmode="text" matInput>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div *ngFor="let error of errorMessages.order">
+          <ng-container *ngIf="order.hasError(error.type) && (order.dirty || order.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <div>
+          <p style="font-family: KurriIsland;">Time Start</p>
+          <p>
+            <mat-form-field appearance="outline">
+              <input formControlName="timeStart" inputmode="text" matInput>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div *ngFor="let error of errorMessages.timeStart">
+          <ng-container *ngIf="timeStart.hasError(error.type) && (timeStart.dirty || timeStart.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <div>
+          <p style="font-family: KurriIsland;">Time Completed</p>
+          <p>
+            <mat-form-field appearance="outline">
+              <input formControlName="timeCompleted" inputmode="text" matInput>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div *ngFor="let error of errorMessages.timeCompleted">
+          <ng-container *ngIf="timeCompleted.hasError(error.type) && (timeCompleted.dirty || timeCompleted.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <div class="ion-text-center"><button mat-button matStepperNext class="forms-button">Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="ledFormGroup">
+      <form [formGroup]="ledFormGroup">
+        <ng-template matStepLabel>
+          <div class="template-title">LED</div>
+        </ng-template>
+        <div class="ion-text-center">
+          <p class="forms-title" style="background-color: darkgrey;">
+            LED Board
+          </p>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">Front:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="5" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="6">Monthly</mat-radio-button>
+            <mat-radio-button value="7">Quarterly</mat-radio-button>
+            <mat-radio-button value="8">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">Side:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">Rear:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">Controller:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">CONTENT CHECK (ROUTE)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)		</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div class="ion-text-center">
+          <button mat-button matStepperPrevious class="forms-button">Previous</button>
+          <button mat-button matStepperNext class="forms-button">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fleetFormGroup">
+      <form [formGroup]="fleetFormGroup">
+        <ng-template matStepLabel>
+          <div class="template-title">Fleet</div>
+        </ng-template>
+        <div class="ion-text-center">
+          <p class="forms-title" style="background-color: darkgrey;">
+            Fleet Tracking System		
+          </p>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">Trunk Radio:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">CONTENT CHECK (DEPOT)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">Tracker:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">PANIC BUTTON</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">CBTS CABLE/'C' CLIP</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div class="ion-text-center">
+          <button mat-button matStepperPrevious class="forms-button">Previous</button>
+          <button mat-button matStepperNext class="forms-button">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="passengerFormGroup">
+      <form [formGroup]="passengerFormGroup">
+        <ng-template matStepLabel>
+          <div class="template-title">Passenger</div>      
+        </ng-template>
+        <div class="ion-text-center">
+          <p class="forms-title" style="background-color: darkgrey;">
+            Passenger Information	
+          </p>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">Announcerment Player:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1"[checked] = "true" >Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">CONTENT CHECK (ROUTE)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">SPEAKER</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">MICROPHONE</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">Infotaiment System:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">LCD MONITOR FRONT</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">LCD MONITOR  REAR</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div class="ion-text-center">
+          <button mat-button matStepperPrevious class="forms-button">Previous</button>
+          <button mat-button matStepperNext class="forms-button">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="cctvFormGroup">
+      <form [formGroup]="cctvFormGroup">
+        <ng-template matStepLabel>
+          <div class="template-title">CCTV</div> 
+        </ng-template>
+        <div class="ion-text-center">
+          <p class="forms-title" style="background-color: darkgrey;">
+            CCTV System
+          </p>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 15px;">LCD MONITOR</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">CAMERA CONDITION</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">DVR/NVR</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div class="ion-text-center">
+          <button mat-button matStepperPrevious class="forms-button">Previous</button>
+          <button mat-button matStepperNext class="forms-button">Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="fcsFormGroup">
+      <form [formGroup]="fcsFormGroup">
+        <ng-template matStepLabel>
+          <div class="template-title">FCS</div> 
+        </ng-template>
+        <div class="ion-text-center">
+          <p class="forms-title" style="background-color: darkgrey;">
+            FCS	
+          </p>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">CBTS - ETM:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">CBTS - READER:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">BTS:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK (FUNCTION & CLEAN)</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">HARDNESS & EARTHING CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Weekly</mat-radio-button>
+            <mat-radio-button value="2">Monthly</mat-radio-button>
+            <mat-radio-button value="3">Quarterly</mat-radio-button>
+            <mat-radio-button value="4">Yearly</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <p style="font-family: KurriIsland; font-size: 20px;">CASH VAULT:</p>
+          <p style="font-family: KurriIsland; font-size: 15px;">LOCK CONDITION</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Type A</mat-radio-button>
+            <mat-radio-button value="2">Type B</mat-radio-button>
+            <mat-radio-button value="3">Type C</mat-radio-button>
+          </mat-radio-group>
+          <p style="font-family: KurriIsland; font-size: 15px;">VISUAL CHECK</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" [checked] = "true">Type A</mat-radio-button>
+            <mat-radio-button value="2">Type B</mat-radio-button>
+            <mat-radio-button value="3">Type C</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="example-full-width">
+            <mat-label>Remarks</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        <div class="ion-text-center">
+          <button mat-button matStepperPrevious class="forms-button">Previous</button>
+          <button mat-button (click)="OpenConfirmDialogue()" class="forms-button">Submit </button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+</ion-content>

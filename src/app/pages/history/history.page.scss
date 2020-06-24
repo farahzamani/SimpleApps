@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,600,700");
+@import url("https://use.fontawesome.com/releases/v5.0.7/css/all.css");
+
+ion-title{
+    font-family: libelsuit;
+    font-size: 25px;
+}
+
+.history-content {
+    --ion-background-color: #bea2e7;
+    --ion-background-color: -moz-linear-gradient(top, #bea2e7 0%, #86b7e7 100%);
+    --ion-background-color: -webkit-linear-gradient(top, #bea2e7 0%, #86b7e7 100%);
+    --ion-background-color: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bea2e7', endColorstr='#86b7e7',GradientType=0 );
+}
+.container {
+    margin: 40px 40px 100px;
+}
+.container ul {
+    margin: 0;
+    margin-top: 30px;
+    list-style: none;
+    position: relative;
+    color: #fff;
+    font-size: 13px;
+}
+.container ul:before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    border-left: 2px dashed #fff;   
+}
+
+.container ul li {
+    position: relative;
+    margin-left: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 14px;
+    border-radius: 6px;
+    width: fixed;
+    height: 100px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.08);
+   
+}
+
+.container ul li:not(:first-child) {
+    margin-top: 60px;
+}
+
+.container ul li > span {
+    width: 2px;
+    height: 100%;
+    background: #fff;
+    left: -30px;
+    top: 0;
+    position: absolute; 
+}
+
+.container ul li > span:before, .container ul li > span:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    position: absolute;
+    background: #86b7e7;
+    left: -5px;
+    top: 0;
+}
+
+.container ul li > span:before {
+    top: -10px;
+}
+
+.container ul li > span:after {
+    top: 100%;
+}
+
+.container ul li > div {
+    margin-left: 10px;
+}
+
+.container span.time {
+    height: 100%;
+}
+
+.container span.time span {
+    position: absolute;
+    font-size: 10px;
+    left: -35px;
+    font-weight: bold;
+}
+
+.container ul li .time span {
+    position: absolute;
+    font-size: 12px;
+    left: -105px;
+    width: 50px;
+    text-align: right;
+    color: rgb(5, 31, 65);
+}
+
+.container ul li .time span:first-child{
+    top: -12px;
+}
+
+.container ul li .time span:last-child{
+    left: -105px;
+    top: 100%;
+}
+
+.container ul li .toggle{
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 70%;
+    right: 0;
+    margin: auto;
+    text-align: left;
+    border-radius: 50%;
+    cursor:pointer;   
+}
+
+.toggle i {
+    font-size: 20px; 
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+    transition: 0.7s;
+}
+
+.container ul li .menu {
+    opacity: 0.2;
+    height: 70px;
+    width: 70px;
+    border-radius:50%;
+    transform: scale(0);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 70%;
+    right: 0;
+    margin: auto;
+    border: 2px solid #e74c3c;
+    transition: 0.7s; 
+}
+
+.menu a{
+    display: inline-block;
+    position: absolute;
+    font-size: 12px;
+    color: red;
+    transition: 0.4s;
+}
+
+.menu  a:nth-child(1){
+    top: 6px;
+    left: 28px;
+}
+
+.menu  a:nth-child(2){
+    top: 40px;
+    left: 45px;
+}
+
+.menu  a:nth-child(3){
+    top: 40px;
+    left: 10px;
+}
+
+.menu a:hover{
+    color: #3498db;
+}

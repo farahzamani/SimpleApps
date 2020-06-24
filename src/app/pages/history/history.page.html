@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color='dark'>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content padding class="history-content">
+    <div class="container">
+      <ul>
+        <li>
+          <span></span>
+          <div class="title">Bus Number: XXXXX</div>
+          <div class="info">Bus Model: XXXXX</div>
+          <div class="type">Maintenance Order:</div>
+          <div class="time">
+            <span>9:00</span>
+            <span>10:00</span>
+          </div>
+          <div class="toggle" id="toggle" (click) = "expand()">
+            <i class="fas fa-plus" id="plus"></i>
+          </div>
+          <div class="menu" id="menu">
+            <a href="#"><i class="fas fa-edit"></i></a>
+            <a href="#"><i class="fas fa-trash-alt"></i></a>
+            <a href="#"><i class="fas fa-download"></i></a>
+          </div>
+        </li>
+        <li>
+          <span></span>
+          <div class="title">Bus Number: XXXXX</div>
+          <div class="info">Bus Model: XXXXX</div>
+          <div class="type">Maintenance Order:</div>
+          <div class="time">
+            <span>12:00</span>
+            <span>13:00</span>
+          </div>
+          <div class="toggle" id="toggle2" (click) = "expand2()">
+            <i class="fas fa-plus" id="plus2"></i>
+          </div>
+          <div class="menu" id="menu2">
+            <a href="#"><i class="fas fa-edit"></i></a>
+            <a href="#"><i class="fas fa-trash-alt"></i></a>
+            <a href="#"><i class="fas fa-download"></i></a>
+          </div>
+        </li>
+        <li>
+          <span></span>
+          <div class="title">Bus Number: XXXXX</div>
+          <div class="info">Bus Model: XXXXX</div>
+          <div class="type">Maintenance Order:</div>
+          <div class="time">
+            <span>15:00</span>
+            <span>16:00</span>
+          </div>
+          <div class="toggle" id="toggle3" (click) = "expand3()">
+            <i class="fas fa-plus" id="plus3"></i>
+          </div>
+          <div class="menu" id="menu3">
+            <a href="#"><i class="fas fa-edit"></i></a>
+            <a href="#"><i class="fas fa-trash-alt"></i></a>
+            <a href="#"><i class="fas fa-download"></i></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+   

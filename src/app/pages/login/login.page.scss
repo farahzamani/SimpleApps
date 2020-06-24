@@ -1,0 +1,41 @@
+ion-title{
+    font-family: libelsuit;
+    font-size: 25px;
+}
+
+img{
+    width:50%;
+    height: 50%;
+    padding-top: 60px;
+}
+
+:host{
+    ion-label{
+    font-family: Calibrireg;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e2023;
+    }
+
+    ion-input{
+    font-family: Calibrireg;
+    font-size: 20px;
+    color: #1e2023;
+    }
+
+    ion-button.button{
+        width : 200px;
+        height: 30px;
+        font-family: Goodtimes;
+        font-size: 15px;
+    }
+
+    div{
+        padding: 5px;
+    }
+    h2{
+        font-family: libelsuit;
+        font-size: 20px;
+    }
+
+}

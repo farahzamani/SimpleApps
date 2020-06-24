@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color='danger'>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/'></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Create Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+  <div class="center">
+  <form>
+    <ion-list>
+      
+      <ion-item>
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input type='text' placeholder="FARAH NABILAH BINTI ZAMANI"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">ID No.</ion-label>
+        <ion-input type='number' placeholder="XXXXXX-XX-XXXX"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Re-Enter Password</ion-label>
+        <ion-input type='password'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <h2>Already you have an account?  <a routerLink='/login'>Sign In</a></h2>
+      </ion-item>
+      <div>
+        <ion-button id="button" shape='round' color='primary' routerLink='/login'>Submit</ion-button>
+      </div>
+    </ion-list>
+  </form>
+  </div>
+</ion-content>

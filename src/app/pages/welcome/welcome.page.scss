@@ -1,0 +1,28 @@
+ion-content.background{
+    //--ion-background-color:#222428;
+    --background: url(/../assets/images/seater.jpg) no-repeat center center / cover !important;
+    
+}
+div{
+    padding: 25px;
+}
+.apps-title{
+    padding-top: 200px;
+}
+
+/*img{
+    width:150px;
+    padding-top: 120px;
+}*/
+h1{
+    font-family: "Chunkfive";
+    color: #ffffff;
+}
+
+:host{
+    ion-button{
+        width : 200px;
+        font-family: "Goodtimes";
+        font-size: 10px;
+    }
+}

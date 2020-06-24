@@ -1,0 +1,40 @@
+.error-message{
+    color: var(--ion-color-danger);
+}
+ion-title{
+    font-family: libelsuit;
+    font-size: 25px;
+}
+
+.template-title{
+    font-family: libelsuit;
+    font-size: 15px;
+}
+
+.forms-title{
+    font-family: libelsuit;
+    font-size: 20px;
+}
+
+.forms-button{
+    padding-bottom: 50px;
+    font-family: libelsuit;
+    font-size: 20px;
+}
+
+.example-full-width {
+    width: 100%;
+    margin-top: 30px;
+}
+
+:host{
+    mat-radio-button{
+        margin-left: 16px;
+        font-family: libelsuit;
+        font-size: 15px;
+      }
+}
+
+
+
+

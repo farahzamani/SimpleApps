@@ -1,0 +1,8 @@
+{
+  "name": "RapidSystem",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color='danger'>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/'></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <img src='assets/images/rapid.jpg' alt="Rapid"/>
+
+
+    <form>
+      <ion-list>
+        
+        <ion-item>
+          <ion-label position="stacked">ID No.</ion-label>
+          <ion-input type='number'></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <h2>Create new account?  <a routerLink='/signup'>Create Account</a></h2>
+        </ion-item>
+        <div>
+          <ion-button id="button" shape='round' color='primary' (click)="login()">Login</ion-button>
+        </div>
+      </ion-list>
+    </form>
+
+  </div>
+</ion-content>
